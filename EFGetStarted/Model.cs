@@ -3,8 +3,8 @@ using System.Reflection.Metadata;
 
 public class BloggingContext : DbContext
 {
-    DbSet<Blog> Blog { get; set; }
-    DbSet<Post> Post { get; set; }
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }
     public string DbPath { get; }
     public BloggingContext()
     {
@@ -23,7 +23,7 @@ public class Blog
 {
     public int BlogId { get; set; }
     public string BlogUrl { get; set; }
-    public List<Post> ListPosts { get; } = new();
+    public List<Post> Posts { get; } = new();
 }
 public class Post
 {
