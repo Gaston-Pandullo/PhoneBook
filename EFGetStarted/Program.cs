@@ -16,7 +16,7 @@ await db.SaveChangesAsync();
 
 //Read
 Console.WriteLine("Query for a blog");
-var blog = await db.Blogs.OrderBy(b => b.BlogId).FirstAsync();
+var blog = await db.Blog.OrderBy(b => b.BlogId).FirstAsync();
 
 //Update
 Console.WriteLine("Updating the blog and adding the post");
