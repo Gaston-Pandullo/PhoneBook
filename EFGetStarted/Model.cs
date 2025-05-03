@@ -12,6 +12,11 @@ public class BloggingContext : DbContext
         var path = Environment.GetFolderPath(folder);
         DbPath = System.IO.Path.Join(path, "blogging.db");
     }
+
+    // Configuracion de EF para crear un archivo de base de datos Sqlite
+    // En la "carpeta especial" de la plataforma.
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlite($"Data Source={DbPath}");
 }
 
 public class Blog
